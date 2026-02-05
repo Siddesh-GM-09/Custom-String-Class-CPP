@@ -18,11 +18,17 @@ class String{
     //Insertion (to display the output)
     friend ostream& operator<<(ostream&,const String&);
     //Operator overload >  (eg. bool temp= s1 > s2;
+    bool operator>(String& temp);
     //Operator overload <  (eg. bool temp= s1 < s2;
+    bool operator<(String& temp);
     //Operator overload >= (eg. bool temp= s1 >= s2;
+    bool operator>=(String& temp);
     //Operator overload <= (eg. bool temp= s1 <= s2;
+    bool operator<=(String& temp);
     //Operator overload == (eg. bool temp= s1 == s2;
+    bool operator==(String& temp);
     //Operator overload != (eg. bool temp= s1 != s2;
+    bool operator!=(String& temp);
      //Destructor
     ~String();
 };

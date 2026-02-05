@@ -41,3 +41,96 @@ String& String::operator=(const String& temp){
     }
     return *this;
 }
+
+//Operator overload >  (eg. bool temp= s1 > s2;
+bool String::operator>(String& temp){
+    int i=0;
+    while(ptr[i]!='0' && temp.ptr[i]!='\0'){
+        //eg : ("Abc">"abc")
+        if(ptr[i]<temp.ptr[i]){
+            return false;
+        }
+        //eg : ("abc">"aBc")
+        if(ptr[i]>temp.ptr[i]){
+            return true;
+        }
+        i++;
+    }
+    return (ptr[i]='\0' && temp.ptr[i]==0);
+}
+
+//Operator overload <  (eg. bool temp= s1 < s2;
+bool String::operator<(String& temp){
+    int i=0;
+    while(ptr[i]!='\0' && temp.ptr[i]!='\0'){
+        //eg : ("abc"<"Abc")
+        if(ptr[i]>temp.ptr[i]){
+            return false;
+        }
+        //eg : ("aBc"<"abc")
+        if(ptr[i]<temp.ptr[i]){
+            return true;
+        }
+        i++;
+    }
+    return (ptr[i]=='\0' && temp.ptr[i]=='\0'); 
+}
+
+//Operator overload >= (eg. bool temp= s1 >= s2;
+bool String::operator>=(String& temp){
+    int i=0;
+    while(ptr[i]!='\0' && temp.ptr[i]!='\0'){
+        //eg : ("abc">="Abc")
+        if(ptr[i]<temp.ptr[i]){
+            return false;
+        }
+        //eg : ("aBc">="abC")
+        if(ptr[i]>=temp.ptr[i]){
+            return true;
+        }
+        i++;
+    }
+    return (ptr[i]=='\0' && temp.ptr[i]=='\0');
+}
+
+//Operator overload <= (eg. bool temp= s1 <= s2;
+bool String::operator<=(String& temp){
+    int i=0;
+    while(ptr[i]!='\0' && temp.ptr[i]!='0'){
+        //eg : ("aBC"<="ABC")
+        if(ptr[i]>temp.ptr[i]){
+            return false;
+        }
+        //eg : ("ABc"<="aBC")
+        if(ptr[i]<=temp.ptr[i]){
+            return true;
+        }
+        i++;
+    }
+    return (ptr[i]=='\0' && temp.ptr[i]=='\0');
+}
+
+//Operator overload == (eg. bool temp = s1 == s2;
+bool String::operator==(String& temp){
+    int i=0;
+    while(ptr[i]!='\0' && temp.ptr[i]!='0'){
+        //eg : ("abc"=="aBc")
+        if(ptr[i]!=temp.ptr[i]){
+            return false;
+        }
+        i++;
+    }
+    return (ptr[i]=='\0' && temp.ptr[i]=='\0');
+}
+//Operator overload != (eg. bool temp= s1 != s2;
+bool String::operator!=(String& temp){
+    int i=0;
+    while(ptr[i]!='\0' && temp.ptr[i]!='\0'){
+        //eg : ("abc"!="AbC")
+        if(ptr[i]!=temp.ptr[i]){
+            return true;
+        }
+        i++;
+    }
+    return (ptr[i]=='\0' && temp.ptr[i]=='\0');
+}
