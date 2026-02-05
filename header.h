@@ -8,55 +8,55 @@ class String{
     //Default constructor 
     String();
     //Parameterized Constructor
-    String(const char *str);
+    String(const char *);
     //Copy constructor
-    String(const String& temp);
+    String(const String& );
     //Assignment Operator
-    String& operator=(const String& temp);
+    String& operator=(const String& );
     // Subscript Operator
-    char& operator[](int i);
+    char& operator[](int );
     //Extraction(to scan the input)
     friend istream& operator>>(istream& ,String& );
     //Insertion (to display the output)
     friend ostream& operator<<(ostream&,const String&);
     //String Length
-    friend unsigned int my_strlen(const String& temp);
+    friend unsigned int my_strlen(const String& );
     //strcpy(s1,s2)
-    friend char* my_strcpy(String& dest,const String& src);
+    friend void my_strcpy(String& ,const String& );
     //strncpy(s1,s2,int)
-    friend char* my_strncpy(String& dest,const String& src,int len);
+    friend void my_strncpy(String& ,const String& ,int );
     //strcmp(s1,s2)
-    friend int my_strcmp(const String& str1,const String& str2);
+    friend int my_strcmp(const String& ,const String& );
     //strncmp(s1,s2,int)
-    friend int my_strncmp(const String& str1,const String& str2,int len);
+    friend int my_strncmp(const String& ,const String& ,int );
     //strcat(s1,s2)
-    friend char* my_strcat(String& str1,const String& str2);
+    friend void my_strcat(String& ,const String& );
     //strncat(s1,s2,int)
-    friend char* my_strcat(String& str1,const String& str2,int len);
+    friend char* my_strcat(String& ,const String& ,int );
     //strrev(s1)
-    friend void my_strrev(String& str);
+    friend void my_strrev(String& );
     //strupper(s1)
-    friend void my_strUpper(String& str);
+    friend void my_strUpper(String& );
     //strlower(s1)
-    friend void my_strLower(String& str);
+    friend void my_strLower(String& );
     //strch(s1,char)
-    friend char* my_strchr(const String& str,const char ch);
+    friend char* my_strchr(const String& ,const char );
     //strrchr(s1,char)
-    friend char* my_strychr(const String& str,const char ch);
+    friend char* my_strrchr(const String& ,const char );
     //strstr(s1,s2)
-    friend char* my_strstr(const String* str1,const String& str2);
-    //Operator overload >  (eg. bool temp= s1 > s2;
-    bool operator>(String& temp);
-    //Operator overload <  (eg. bool temp= s1 < s2;
-    bool operator<(String& temp);
-    //Operator overload >= (eg. bool temp= s1 >= s2;
-    bool operator>=(String& temp);
-    //Operator overload <= (eg. bool temp= s1 <= s2;
-    bool operator<=(String& temp);
-    //Operator overload == (eg. bool temp= s1 == s2;
-    bool operator==(String& temp);
-    //Operator overload != (eg. bool temp= s1 != s2;
-    bool operator!=(String& temp);
+    friend char* my_strstr(const String&,const String&);
+    //Operator overload >  (eg. bool temp= s1 > s2)
+    bool operator>(String& );
+    //Operator overload <  (eg. bool temp= s1 < s2)
+    bool operator<(String& );
+    //Operator overload >= (eg. bool temp= s1 >= s2)
+    bool operator>=(String& );
+    //Operator overload <= (eg. bool temp= s1 <= s2)
+    bool operator<=(String& );
+    //Operator overload == (eg. bool temp= s1 == s2)
+    bool operator==(String& );
+    //Operator overload != (eg. bool temp= s1 != s2)
+    bool operator!=(String& );
      //Destructor
     ~String();
 };
