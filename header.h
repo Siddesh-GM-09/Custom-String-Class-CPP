@@ -13,6 +13,8 @@ class String{
     String(const String& temp);
     //Assignment Operator
     String& operator=(const String& temp);
+    // Subscript Operator
+    char& operator[](int i);
     //Extraction(to scan the input)
     friend istream& operator>>(istream& ,String& );
     //Insertion (to display the output)

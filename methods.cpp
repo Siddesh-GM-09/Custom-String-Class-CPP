@@ -42,6 +42,21 @@ String& String::operator=(const String& temp){
     return *this;
 }
 
+// Subscript Operator
+char& String::operator[](int i){
+    try{
+        if(i<strlen(ptr)){
+            return ptr[i];
+        }
+        else{
+            throw "\033[31mError : index out of bound\033[0m";
+        }
+    }
+    catch(const char *eMsg){
+        cout<<eMsg<<endl;
+    }
+}
+
 //Operator overload >  (eg. bool temp= s1 > s2;
 bool String::operator>(String& temp){
     int i=0;
