@@ -32,7 +32,7 @@ class String{
     //strcat(s1,s2)
     friend void my_strcat(String& ,const String& );
     //strncat(s1,s2,int)
-    friend char* my_strcat(String& ,const String& ,int );
+    friend void my_strncat(String& ,const String& ,int );
     //strrev(s1)
     friend void my_strrev(String& );
     //strupper(s1)

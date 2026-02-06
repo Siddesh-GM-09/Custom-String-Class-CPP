@@ -2,7 +2,8 @@
 
 //Default constructor 
 String::String(){  
-    ptr=NULL;
+    ptr = new char[1];
+    ptr[0] = '\0';
 }
 
 //Parameterized Constructor
@@ -13,13 +14,8 @@ String::String(const char *str){
 
 //Copy constructor
 String::String(const String& temp){
-    if(temp.ptr!=NULL){
-        ptr=new char [strlen(temp.ptr)+1];
-        strcpy(ptr,temp.ptr);
-    }
-    else{
-        ptr=NULL;
-    }
+    ptr=new char [strlen(temp.ptr)+1];
+    strcpy(ptr,temp.ptr);
 }
 
 //Destructor

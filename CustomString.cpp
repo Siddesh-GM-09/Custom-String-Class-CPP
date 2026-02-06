@@ -20,25 +20,20 @@ void my_strcpy(String& dest,const String& src){
 
 //strncpy(s1,s2,int)
 void my_strncpy(String& dest,const String& src,int len){
-    int sLen=strlen(src.ptr)-1;
-    try{
-        if(len>sLen){
-            throw "\033[31mError : lenght out of range\033[0m";
-        }
-        int i=0;
-        for(i=0;src.ptr[i]!='\0';i++){
-            if(i<=len){
-                dest.ptr[i]=src.ptr[i];
-            }
-            else{
-                break;
-            }
-        }
-        dest.ptr[i]='\0';
+    if (len <= 0) {
+        delete[] dest.ptr;
+        dest.ptr = new char[1];
+        dest.ptr[0] = '\0';
+        return;
     }
-    catch(const char *eMsg){
-        cout<<eMsg<<endl;
+    int srcLen = strlen(src.ptr);
+    int copyLen = (len < srcLen) ? len : srcLen;
+    delete[] dest.ptr;
+    dest.ptr = new char[copyLen + 1];
+    for (int i = 0; i < copyLen; i++) {
+        dest.ptr[i] = src.ptr[i];
     }
+    dest.ptr[copyLen] = '\0';
 }
 
 //strcmp(s1,s2)
@@ -76,19 +71,31 @@ int my_strncmp(const String& str1,const String& str2,int len){
 
 //strcat(s1,s2)
 void my_strcat(String& str1,const String& str2){
-    int i=strlen(str1.ptr);
-    for(int j=0;str2.ptr[j]!='\0';j++,i++){
-        str1.ptr[i]=str2.ptr[j];
-    }
-    str1.ptr[i]='\0';
+    int len1=strlen(str1.ptr);
+    int len2=strlen(str2.ptr);
+    char *newPtr=new char [len1+len2+1];
+    strcpy(newPtr,str1.ptr); //copy original string(s1.ptr)
+    strcpy(newPtr+len1,str2.ptr); //adding string(s2.ptr)
+    delete [] str1.ptr; 
+    str1.ptr=newPtr;
 }
 
 //strncat(s1,s2,int)
-char* my_strcat(String& str1,const String& str2,int len){
-    int j=strlen(str1.ptr);
-    for(int i=0;i<len;i++,j++){
-        str1.ptr[j]=str2.ptr[i];
+void my_strncat(String& str1, const String& str2, int len) {
+    if (len <= 0) {
+        return;
     }
+    int len1 = strlen(str1.ptr);
+    int len2 = strlen(str2.ptr);
+    int copyLen = (len < len2) ? len : len2;
+    char* newPtr = new char[len1 + copyLen + 1];
+    strcpy(newPtr, str1.ptr);
+    for (int i = 0; i < copyLen; i++) {
+        newPtr[len1 + i] = str2.ptr[i];
+    }
+    newPtr[len1 + copyLen] = '\0';
+    delete[] str1.ptr;
+    str1.ptr = newPtr;
 }
 
 //strrev(s1)

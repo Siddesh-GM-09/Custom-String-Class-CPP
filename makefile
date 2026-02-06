@@ -1,4 +1,4 @@
-target = main.o methods.o friend.o 
+target = main.o methods.o friend.o CustomString.o
 CC=g++
 
 output:$(target)
@@ -13,6 +13,8 @@ methods.o:methods.cpp
 friend.o:friend.cpp
 	$(CC) -c friend.cpp
 
+CustomString.o:CustomString.cpp
+	$(CC) -c CustomString.cpp
 clear: 
 	@echo Cleaning Object File
 	@del /Q *.o 2>nul
