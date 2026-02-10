@@ -133,6 +133,7 @@ bool String::operator==(String& temp){
     }
     return (ptr[i]=='\0' && temp.ptr[i]=='\0');
 }
+
 //Operator overload != (eg. bool temp= s1 != s2)
 bool String::operator!=(String& temp){
     int i=0;

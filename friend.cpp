@@ -1,7 +1,7 @@
 #include "header.h"
 //Extraction(to scan the input)
 istream& operator>>(istream& in,String& temp){
-    // //temporary buffer to store input,because can't store in the temp.ptr(which has NULL)
+    // temporary buffer to store input,because can't store in the temp.ptr(which has NULL)
     char inBuff[1000]; 
     in>>inBuff;
     delete [] temp.ptr; //free old memory

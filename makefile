@@ -17,4 +17,7 @@ CustomString.o:CustomString.cpp
 	$(CC) -c CustomString.cpp
 clear: 
 	@echo Cleaning Object File
+#for linux 
+#	@rm -r *.o    
+#for windows
 	@del /Q *.o 2>nul
