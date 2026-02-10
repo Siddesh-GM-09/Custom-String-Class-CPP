@@ -45,11 +45,11 @@ char& String::operator[](int i){
             return ptr[i];
         }
         else{
-            throw "\033[31mError : index out of bound\033[0m";
+            throw "Error : index out of bound";
         }
     }
     catch(const char *eMsg){
-        cout<<eMsg<<endl;
+        cout<<RED<<eMsg<<RESET<<endl;
     }
 }
 

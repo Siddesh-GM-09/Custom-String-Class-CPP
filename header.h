@@ -1,7 +1,9 @@
 #include<iostream>
 #include<cstring>
 using namespace std;
-
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define RESET   "\033[0m"
 class String{
     char *ptr;
     public:

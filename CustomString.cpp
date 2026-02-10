@@ -159,7 +159,7 @@ char* my_strstr(const String& str1,const String& str2){
                     break;
                 }
             }
-            if(flag){
+            if(flag==0){
                 return &str1.ptr[i];
             }
         }
